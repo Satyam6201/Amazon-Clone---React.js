@@ -31,9 +31,11 @@ const HomeBannerSlider = () => {
         <SwiperSlide>
           <img src={slide1} alt="Slide 1" />
         </SwiperSlide>
+
         <SwiperSlide>
           <img src={slide2} alt="Slide 2" />
         </SwiperSlide>
+        
         <SwiperSlide>
           <img src={slide3} alt="Slide 3" />
         </SwiperSlide>
