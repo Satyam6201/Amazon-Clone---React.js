@@ -84,20 +84,22 @@ const SearchProducts = () => {
 
           </select>
         </div>
-
       </div>
 
       <div className='productList'>
         <div className='left'>
           <h5>Delivery Day</h5>
+
           <div>
             <input type='checkbox' />
             <p>Get it by today</p>
           </div>
+
           <div>
             <input type='checkbox' />
             <p>Get it by tommorrow</p>
           </div>
+
           <div>
             <input type='checkbox' />
             <p>Get it in 2 Days</p>
@@ -106,34 +108,42 @@ const SearchProducts = () => {
           <br />
           <br />
           <h5>Installed RAM Size</h5>
+
           <div>
             <input type="checkbox" />
             <p>Up to 1.9 GB</p>
           </div>
+
           <div>
             <input type="checkbox" />
             <p>2 to 3.9 GB</p>
           </div>
+
           <div>
             <input type="checkbox" />
             <p>4 to 5.9 GB</p>
           </div>
+
           <div>
             <input type='checkbox' />
             <p>6 to 7.9 GB</p>
           </div>
+
           <div>
             <input type='checkbox' />
             <p>8 to 9.9 GB</p>
           </div>
+
           <div>
             <input type='checkbox' />
             <p>10 GB & above</p>
           </div>
+
           <h5>Customer Rating</h5>
               <div><input type="checkbox" onChange={() => handleRatingFilter(4)} /><p>4 ★ & above</p></div>
               <div><input type="checkbox" onChange={() => handleRatingFilter(3)} /><p>3 ★ & above</p></div>
         </div>
+
         <div className='right'>
           {
             sortedProducts.length > 0 ? (
@@ -146,7 +156,6 @@ const SearchProducts = () => {
               )
           }
         </div>
-
       </div>
     </div>
   )
