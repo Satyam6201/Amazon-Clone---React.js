@@ -35,19 +35,23 @@ const HomeBannerSlider = () => {
         <SwiperSlide>
           <img src={slide2} alt="Slide 2" />
         </SwiperSlide>
-        
+
         <SwiperSlide>
           <img src={slide3} alt="Slide 3" />
         </SwiperSlide>
+
         <SwiperSlide>
           <img src={slide7} alt="Slide 7" />
         </SwiperSlide>
+
         <SwiperSlide>
           <img src={slide8} alt="Slide 8" />
         </SwiperSlide>
+
         <SwiperSlide>
           <img src={slide9} alt="Slide 9" />
         </SwiperSlide>
+        
       </Swiper>
       <div className="banner-gradient"></div>
     </div>
