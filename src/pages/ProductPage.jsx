@@ -204,7 +204,7 @@ const ProductPage = () => {
                 <th>Brand</th>
                 <td>{product.brand}</td>
               </tr>
-              
+
               <tr>
                 <th>Category</th>
                 <td>{product.category}</td>
@@ -212,31 +212,34 @@ const ProductPage = () => {
 
             </tbody>
           </table>
+
           <div className='about'>
             <h3>About this item</h3>
             <ul>
-              <li>{product.description}
-              </li>
+              <li>{product.description}</li>
             </ul>
           </div>
+
           <div className="product-reviews">      
            <h2>Customer Reviews</h2>
               {products.reviews.length > 0 ? (
               products.reviews.map((review, index) => (
+
                 <div key={index} className="review">
                   <div className="user-info">
-              <FaUserCircle className="user-icon" />
-              <p><strong>{review.user}</strong></p>
-            </div>
+                    <FaUserCircle className="user-icon" />
+                    <p><strong>{review.user}</strong></p>
+                  </div>
                 <p>{review.comment}</p>
+
                 <div className="star-rating">
                   {[...Array(5)].map((_, i) => {
                     if (i < review.rating) {
                     return <span key={i} className="star filled">★</span>;
                   }
                   return <span key={i} className="star">★</span>;
-            })}
-          </div>
+                    })}
+                  </div>
           <span>{`Rating: ${review.rating} / 5`}</span>
           </div>
           ))
@@ -246,6 +249,7 @@ const ProductPage = () => {
         </div> 
         </div>
         <div className='productPurchaseInfo'>
+
         <div className='exchange'>
           <p>With Exchange<br />
               <span className='span1'>Up to Rs. {((product.price - product.price / 10) * 6).toFixed(2)} off</span>
@@ -259,6 +263,7 @@ const ProductPage = () => {
             <span className='span3'>Rs. {(product.price / (1 - product.discountPercentage / 100)*6).toFixed(2)}</span></p>
             <input type='radio' />
           </div>
+          
           <button onClick={() => addToCart(product.id)}>Add to Cart</button>
           <button onClick={(e) => {e.stopPropagation();
           addToCart(product.id);
