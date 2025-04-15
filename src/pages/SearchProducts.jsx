@@ -72,7 +72,7 @@ const SearchProducts = () => {
       </div>
 
       <div className='productSort'>
-        <p>showing results for "{query}"</p>
+        <p className="results-text">showing results for "{query}"</p>
         
         <div className="sort-container">
           <p>Sort by:</p>
