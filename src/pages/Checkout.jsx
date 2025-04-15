@@ -71,7 +71,7 @@ const Checkout = () => {
     }, []);
 
     const onSubmit = (data) => {
-        toast.success("🎉 Order Placed Successfully!");
+        toast.success("🎉 Order Placed Successfully! 🎉");
         clearCart();
         navigate('/');
     };
@@ -205,7 +205,7 @@ const Checkout = () => {
                                     </>
                                 )}
 
-                                <button type='submit'>Place Order</button>
+                                <button type='submit' className='orderBtn'>Place Order</button>
                             </form>
                         </div>
                     </div>

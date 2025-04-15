@@ -235,9 +235,21 @@
 
 /* RESPONSIVE */
 @media screen and (max-width: 768px) {
+
+  .paymentForm form input {
+    font-size: 14px;
+    padding: 8px 10px;
+    width: 50% !important;
+  }
+
+  .orderBtn {
+    margin-left: -60px !important;
+    width: 70% !important;
+  }
+
   .checkoutContainer {
     flex-direction: column;
-    padding: 10px;
+    padding: 15px;
   }
 
   .checkoutContainer .left,
@@ -271,11 +283,12 @@
 
   .cardDetails {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
 
   .paymentForm form input {
     font-size: 14px;
+    padding: 8px 10px;
   }
 
   .orderSummary {
@@ -291,9 +304,26 @@
     font-size: 14px;
   }
 }
+
 @media screen and (max-width: 500px) {
   .checkouttopbar h1 {
     font-size: 18px;
+  }
+
+  .paymentForm form input {
+    font-size: 13px;
+    padding: 6px 8px;
+    width: 70% !important;
+  }
+
+  .orderBtn {
+    margin-left: -60px !important;
+    width: 70% !important;
+  }
+
+  .orderBtn {
+    margin-left: -60px;
+    width: 70% !important;
   }
 
   .paymentMethod button {
@@ -305,6 +335,15 @@
   .paymentMethod,
   .orderSummary {
     padding: 15px;
+  }
+
+  .paymentForm form input {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .cardDetails {
+    gap: 10px;
   }
 }
 
@@ -313,6 +352,17 @@
     font-size: 18px;
   }
 
+  .paymentForm form input {
+    font-size: 12px;
+    padding: 5px 6px;
+    width: 50% !important;
+  }
+
+  .orderBtn {
+    margin-left: -60px;
+    width: 70% !important;
+  }
+
   .paymentMethod button {
     font-size: 14px;
     padding: 10px 0;
@@ -321,7 +371,12 @@
   .addressSection,
   .paymentMethod,
   .orderSummary {
-    padding: 15px;
+    padding: 10px;
+  }
+
+  .paymentForm form input {
+    width: 100%;
+    font-size: 13px;
+    padding: 8px;
   }
 }
-
