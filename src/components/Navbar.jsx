@@ -60,11 +60,13 @@ const Navbar = () => {
         </div>
       </div>
       <SearchBar />
+      
       <div className='right'>
         <CountrySelector />
         <div onClick={() => navigate('/login')}>
           <AccountAndLists />
         </div>
+
         <div onClick={() => navigate('/cart')}>
           <CartIndicator />
         </div>
