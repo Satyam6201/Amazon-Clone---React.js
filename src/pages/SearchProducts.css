@@ -117,6 +117,10 @@
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 }
 
+.results-text:hover {
+  background-color: #e6e6e6;
+  transition: background-color 0.3s ease;
+}
 
 .sort-container {
   display: flex;
@@ -129,6 +133,11 @@
   font-family: 'Segoe UI', sans-serif;
   margin-bottom: 20px;
   flex-wrap: wrap;
+}
+
+.sort-container:hover{
+  background-color: #c5c5c5;
+  transition: background-color 0.3s ease;
 }
 
 .sort-container p {
