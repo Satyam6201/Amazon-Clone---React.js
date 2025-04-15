@@ -1,6 +1,7 @@
 .home-banner-container {
+  margin-left: -50px;
   position: relative;
-  width: 100%;
+  width: 98vw;
   max-height: 600px;
   overflow: hidden;
 }

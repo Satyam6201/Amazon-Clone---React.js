@@ -9,7 +9,13 @@
   gap: 20px;
   width: 100%;
   box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  margin-top: 0;
 }
+
 
 .navbar img {
   height: 50px;
@@ -42,7 +48,6 @@
   flex-shrink: 0;
 }
 
-/* Make sure SearchBar grows and adjusts */
 .navbar > :nth-child(3) {
   flex: 1;
   min-width: 200px;
