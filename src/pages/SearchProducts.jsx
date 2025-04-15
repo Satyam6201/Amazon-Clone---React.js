@@ -74,7 +74,7 @@ const SearchProducts = () => {
       <div className='productSort'>
         <p>showing results for "{query}"</p>
         
-        <div style={{ display: "flex", gap: '10px' }}>
+        <div className="sort-container">
           <p>Sort by:</p>
           <select onClick={(e)=> setSortOption(e.target.value)}>
 
