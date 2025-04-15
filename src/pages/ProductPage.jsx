@@ -180,25 +180,31 @@ const ProductPage = () => {
           </div>
           <div className='hr'></div>
           <div className='extras'>
+
             <div className='extraItem'>
               <FaArrowsRotate />
               <span>7 days Replacement</span>
             </div>
+
             <div className='extraItem'>
               <CiDeliveryTruck />
               <span>Free Delivery</span>
             </div>
+
             <div className='extraItem'>
               <GoShieldCheck />
               <span>{product.warrantyInformation || "No warranty"}</span>
             </div>
+
           </div>
           <table>
             <tbody>
+
               <tr>
                 <th>Brand</th>
                 <td>{product.brand}</td>
               </tr>
+              
               <tr>
                 <th>Category</th>
                 <td>{product.category}</td>
