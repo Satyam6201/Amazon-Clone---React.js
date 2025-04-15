@@ -9,7 +9,6 @@ const SearchProducts = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-
   const searchResults = location.state?.results || [];
   const [query, setQuery] = useState('');
   const [sortedProducts, setSortedProducts] = useState(searchResults);
@@ -74,21 +73,18 @@ const SearchProducts = () => {
 
       <div className='productSort'>
         <p>showing results for "{query}"</p>
+        
         <div style={{ display: "flex", gap: '10px' }}>
           <p>Sort by:</p>
           <select onClick={(e)=> setSortOption(e.target.value)}>
-            <option value={""}>
-              Featured
-            </option>
-            <option value={"lowToHigh"}>
-              Price: Low to High
-            </option>
-            <option value={"highToLow"}>
-              Price: High to Low
-            </option>
-          </select>
 
+            <option value={""}>Featured</option>
+            <option value={"lowToHigh"}>Price: Low to High </option>
+            <option value={"highToLow"}>Price: High to Low</option>
+
+          </select>
         </div>
+
       </div>
 
       <div className='productList'>
