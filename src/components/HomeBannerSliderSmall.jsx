@@ -15,18 +15,23 @@ const HomeBannerSliderSmall = () => {
   return (
     <>
     <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+
         <SwiperSlide>
             <img src={slide1}/>
         </SwiperSlide>
+
         <SwiperSlide>
             <img src={slide2}/>
         </SwiperSlide>
+
         <SwiperSlide>
             <img src={slide3}/>
         </SwiperSlide>
+
         <SwiperSlide>
             <img src={slide7}/>
         </SwiperSlide>
+        
         <SwiperSlide>
             <img src={slide8}/>
         </SwiperSlide>
