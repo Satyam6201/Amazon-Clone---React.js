@@ -31,13 +31,15 @@ const HomeBannerSliderSmall = () => {
         <SwiperSlide>
             <img src={slide7}/>
         </SwiperSlide>
-        
+
         <SwiperSlide>
             <img src={slide8}/>
         </SwiperSlide>
+
         <SwiperSlide>
             <img src={slide9}/>
-        </SwiperSlide>        
+        </SwiperSlide> 
+               
       </Swiper>
     </>
   )
