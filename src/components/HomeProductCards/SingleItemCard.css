@@ -1,0 +1,35 @@
+.singleItemCard {
+    padding: 10px;
+    background-color: white;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 250px;
+}
+
+.singleItemCard h1 {
+    font-size: 18px;
+    font-weight: bold;
+    height: 10%;
+}
+
+.singleItemCard  .item {
+    text-align: center;
+    height: 90%;
+}
+
+.singleItemCard .item img {
+    width: 100%;
+    max-height: 90%;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.singleItemCard .item p {
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
