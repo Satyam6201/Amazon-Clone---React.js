@@ -1,110 +1,103 @@
 .navbar {
-  background-color: rgb(15, 17, 17);
+  background-color: #131921; /* Amazon Dark Blue/Black */
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  flex-wrap: nowrap;
-  gap: 20px;
+  gap: 10px;
   width: 100%;
   box-sizing: border-box;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
-  margin-top: 0;
 }
-
 
 .navbar img {
-  height: 50px;
+  height: 35px;
   cursor: pointer;
+  padding: 5px;
   flex-shrink: 0;
 }
 
+/* Desktop Address */
 .addressContainer {
   display: flex;
-  gap: 8px;
+  gap: 5px;
   align-items: center;
-  flex-shrink: 0;
+  cursor: pointer;
+  padding: 5px;
+  border: 1px solid transparent;
+}
+
+.addressContainer:hover {
+  border: 1px solid white;
 }
 
 .addressContainer_in p {
-  font-size: 13px;
+  font-size: 12px;
+  color: #ccc;
   margin: 0;
 }
 
 .addressContainer_in h3 {
-  font-size: 15px;
+  font-size: 14px;
   margin: 0;
-  font-weight: 500;
+  font-weight: bold;
+}
+
+/* Search Bar Container */
+.navbar > :nth-child(3) {
+  flex: 1;
+  margin: 0 10px;
 }
 
 .navbar .right {
   display: flex;
   align-items: center;
-  gap: 20px;
-  flex-shrink: 0;
+  gap: 15px;
 }
 
-.navbar > :nth-child(3) {
-  flex: 1;
-  min-width: 200px;
-  max-width: 600px;
-}
-
-/* Responsive tweaks */
-@media (max-width: 1024px) {
+/* RESPONSIVE LAYOUT FOR TABLETS/PHONES */
+@media (max-width: 850px) {
   .navbar {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    padding: 10px;
+    flex-wrap: wrap; /* Allow wrapping into rows */
+    padding: 10px 15px;
   }
 
-  .addressContainer {
-    display: none;
-  }
-
+  /* Row 1: Logo (Left) */
   .navbar img {
-    height: 40px;
-  }
-
-  .navbar .right {
-    gap: 15px;
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 15px;
-  }
-
-  .navbar img {
-    height: 35px;
-  }
-
-  .navbar .right {
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .navbar > :nth-child(3) {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .navbar img {
+    order: 1;
     height: 30px;
   }
 
+  /* Row 1: Right Side (Account/Cart) */
   .navbar .right {
-    flex-direction: column;
-    gap: 8px;
+    order: 2;
+    gap: 10px;
+  }
+
+  /* Row 2: Search Bar (Full Width) */
+  .navbar > :nth-child(3) {
+    order: 3;
+    flex-basis: 100%; /* Force search bar to its own line */
+    margin: 5px 0;
+  }
+
+  /* Hide Address & Country on small mobile to match Amazon app */
+  .addressContainer, .navbar .right > :first-child {
+    display: none;
+  }
+}
+
+/* Small Phones Adjustment */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 8px 10px;
+  }
+  
+  .navbar .right {
+    gap: 5px;
   }
 }

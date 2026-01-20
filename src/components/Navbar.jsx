@@ -11,69 +11,54 @@ import axios from 'axios';
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const [location, setLocation] = useState("Detecting...");
+  const [location, setLocation] = useState("Select location");
 
   useEffect(() => {
-    if (!navigator.geolocation) {
-      setLocation("Geolocation not supported");
-      return;
-    }
-
-    navigator.geolocation.getCurrentPosition(
-      async (position) => {
-        const { latitude, longitude } = position.coords;
-
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(async (position) => {
         try {
-          const response = await axios.get(
-            `https://api.bigdatacloud.net/data/reverse-geocode-client`,
-            {
-              params: {
-                latitude,
-                longitude,
-                localityLanguage: 'en',
-              },
-            }
-          );
-
-          const { city, principalSubdivision, countryName } = response.data;
-          setLocation(`${city || principalSubdivision}, ${countryName}`);
+          const { latitude, longitude } = position.coords;
+          const res = await axios.get(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`);
+          setLocation(res.data.city || res.data.principalSubdivision || "Overseas");
         } catch (err) {
-          console.error("Error in API call:", err);
-          setLocation("Location unavailable");
+          setLocation("Update location");
         }
-      },
-      (error) => {
-        console.error("Geolocation error:", error.message);
-        setLocation("Permission denied");
-      }
-    );
+      });
+    }
   }, []);
 
   return (
-    <div className='navbar'>
-      <img src={logo} onClick={() => navigate('/')} alt="Logo" />
+    <nav className='navbar'>
+      {/* 1. Logo */}
+      <img src={logo} onClick={() => navigate('/')} alt="Amazon" />
+
+      {/* 2. Address (Hidden on mobile) */}
       <div className='addressContainer'>
-        <HiOutlineLocationMarker color='white' size={25} />
+        <HiOutlineLocationMarker color='white' size={20} />
         <div className='addressContainer_in'>
           <p>Deliver to Satyam</p>
           <h3>{location}</h3>
         </div>
       </div>
+
+      {/* 3. Search Bar (Full width on mobile) */}
       <SearchBar />
 
+      {/* 4. Right Section */}
       <div className='right'>
-        <CountrySelector />
+        <div className="desktop-only">
+            <CountrySelector />
+        </div>
         
-        <div onClick={() => navigate('/login')}>
+        <div className="nav-clickable" onClick={() => navigate('/login')}>
           <AccountAndLists />
         </div>
 
-        <div onClick={() => navigate('/cart')}>
+        <div className="nav-clickable" onClick={() => navigate('/cart')}>
           <CartIndicator />
         </div>
-
       </div>
-    </div>
+    </nav>
   );
 };
 
