@@ -6,29 +6,28 @@ import ProductCard from '../components/ProductCard'
 import { useLocation, useNavigate } from 'react-router-dom'
 const SearchProducts = () => {
 
-  const location = useLocation();
-  const navigate = useNavigate();
+const location = useLocation();
+const navigate = useNavigate();
 
-  const searchResults = location.state?.results || [];
-  const [query, setQuery] = useState('');
-  const [sortedProducts, setSortedProducts] = useState(searchResults);
-  const [sortOption, setSortOption] = useState('');
-  const [categories, setCategories] = useState([]);
+const searchResults = location.state?.results || [];
+const [query, setQuery] = useState('');
+const [sortedProducts, setSortedProducts] = useState(searchResults);
+const [sortOption, setSortOption] = useState('');
+const [categories, setCategories] = useState([]);
 
-  useEffect(() => {
-    const searchParams = new URLSearchParams(location.search);
-    const queryString = searchParams.get('query');
-    setQuery(queryString);
-  }, [location.search]);
+useEffect(() => {
+  const searchParams = new URLSearchParams(location.search);
+  const queryString = searchParams.get('query');
+  setQuery(queryString);
+}, [location.search]);
 
-  useEffect(() => {
-    fetch('https://dummyjson.com/products/category-list')
-      .then(res => res.json())
-      .then((data) => {
-        setCategories(data);
-      })
-      .catch((err) => console.error('Error fetching categories: ', err));
-
+useEffect(() => {
+  fetch('https://dummyjson.com/products/category-list')
+    .then(res => res.json())
+    .then((data) => {
+      setCategories(data);
+    })
+    .catch((err) => console.error('Error fetching categories: ', err));
   }, [])
 
   useEffect(()=>{
@@ -162,4 +161,3 @@ const SearchProducts = () => {
 }
 
 export default SearchProducts
-

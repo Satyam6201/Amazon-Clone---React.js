@@ -10,7 +10,6 @@ import axios from 'axios';
 import { AiOutlineCreditCard } from 'react-icons/ai';
 import { RiWallet3Line } from 'react-icons/ri';
 
-
 const Checkout = () => {
     const { clearCart } = useCart();
     const { register, handleSubmit, formState: { errors } } = useForm();
